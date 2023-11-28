@@ -28,7 +28,6 @@ def index(request):
 def page(request,predictions):
     #print("hello")
     #print(predictions)
-    print(predictions)
     if predictions+1 == 3:
         return render(request,'page.html',{"No_bite":True})
     elif predictions == 4:
@@ -42,3 +41,5 @@ def page(request,predictions):
         #print(bugs.name)
         #print(medicine[0].id)
         return render(request,'page.html',{"bug":bugs,"medicine":medicine,"No_bite":False})
+def healthcheck(request):
+    return HttpResponse('OK',200)
